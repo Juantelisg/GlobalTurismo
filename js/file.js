@@ -1,46 +1,73 @@
-
-/* NOMBRE Y EDAD*/
-
-var nombre= prompt("Ingresa tu nombre");
-var edad = prompt("Ingresa tu edad");
-
-/* SALUDO */
-alert(`Saludos ${nombre}. ¡Veamos cual es tu peso en otro planeta!`);
-
-/* PESO ACTUAL Y PLANETA */
-var peso = prompt("Cual es tu peso actual?")
-var planeta = parseInt(prompt("Elige un planeta: 1) Marte, 2) Jupiter "));
+document.getElementById("calcular").onclick= calcular;
+document.getElementById("Consultar otros").onclick= consultar;
 
 
-/* VARIABLES DE GRAVEDAD */
-
-var g_tierra = 9.8;
-var g_marte = 3.7;
-var g_jupiter = 24.8;
-var peso_final;
 
 
-/* CONDICIONALES IF/ELSE */
+function calcular() {
 
-if (planeta == 1) 
-{
-    var peso_final = peso * g_marte / g_tierra;
-    document.write(`Tu peso en Marte es: ${parseInt(peso_final)} Kg`);
-
-    if (peso_final > 50) {
-        alert(nombre + ' ¡Ten cuidado con ese peso actual en la tierra!')
+    var margarita = {destino: "margarita", costo: 1000};
+    var cancun = {destino: "cancun", costo: 1400};
+    var puntaC = {destino: "punta cana", costo: 1200};
+    
+    var destino = prompt("Cual es tu destino:").toLowerCase();
+    
+    
+    if (destino === margarita.destino) {
+        var personas = prompt("Cuantas personas van:");
+        alert("El precio total del viaje es " + "$" + margarita.costo * personas + "USD");
     }
-} 
-
-
-
-else if(planeta == 2) 
-{
-    var peso_final = peso * g_jupiter / g_tierra;
-    document.write('Tu peso en Jupiter es: ' + parseInt(peso_final) + " Kg");
-
-    if (peso_final > 300) {
-        alert(nombre + ' ¡Ten cuidado con ese peso actual en la tierra!')
+    else if (destino === cancun.destino) {
+        var personas = prompt("Cuantas personas van:");
+        alert("El precio total del viaje es " + "$" + cancun.costo * personas + "USD");
     }
+    else if (destino === puntaC.destino) {
+        var personas = prompt("Cuantas personas van:");
+        alert("El precio total del viaje es " + "$" + puntaC.costo * personas + "USD");
+    }
+    else {
+        alert("PUEDE QUE AUN NO TENGAMOS VIAJES DISPONIBLES A ESE DESTINO!")
+    }
+
+    
+};
+
+function paquete(destino, costo) {
+    this.destino = destino;
+    this.costo = costo;
 }
+
+
+function consultar() {
+
+    var paises = ["Argentina", "Brasil", "Colombia", "Mexico", "Republica Dominicana", "Francia", "Alemania", "Inglaterra", "Taiwan", "Tailandia", "Japon"];
+    var latinoAmetica = paises.slice(0, 5);
+    var europa = paises.slice(5, 8);
+    var asia = paises.slice(8, 11);
+
+    var viaje = new paquete("Mexico", 900);
+    var viaje2 = new paquete("Argentina", 900);
+    var viaje3 = new paquete("Venezuela", 800);
+
+
+    var consulta = prompt("Que paquete deseas consultar? -> 1) Latino America | 2) Europa | 3) Asia");
+
+    if (consulta == 1) {
+        alert("Los destinos a Latino America disponibles son: " + latinoAmetica);
+    }
+    else if (consulta == 2) {
+        alert("Los destinos a Europa disponibles son: " + europa);
+    }
+    else if (consulta == 3) {
+        alert("Los destinos a Asia disponibles son: " + asia);
+    }
+    
+    else{
+        alert("No contamos con la disponibilidad de ese paquete");
+    }
+};
+
+
+//destinos//
+
 
