@@ -1,29 +1,50 @@
-document.getElementById("calcular").onclick= calcular;
+document.getElementById("calcular").onclick= comprar;
 document.getElementById("Consultar otros").onclick= consultar;
 
 
 
 
-function calcular() {
+function comprar() {
 
-    var margarita = {destino: "margarita", costo: 1000};
-    var cancun = {destino: "cancun", costo: 1400};
+    var alemania = {destino: "berlin", costo: 1000};
+    var brasil = {destino: "rio de janeiro", costo: 1400};
     var puntaC = {destino: "punta cana", costo: 1200};
-    
+    var colombia = {destino: "bogota", costo: 1200};
+    var margarita = {destino: "margarita", costo: 1000};
+    var losRoques = {destino: "los roques", costo: 1200};
+   
     var destino = prompt("Cual es tu destino:").toLowerCase();
     
     
-    if (destino === margarita.destino) {
-        var personas = prompt("Cuantas personas van:");
-        alert("El precio total del viaje es " + "$" + margarita.costo * personas + "USD");
+    if (destino === alemania.destino) {
+        var personas = prompt("Cuantas personas seran:");
+        alert("El precio total del viaje es " + "$" + alemania.costo * personas + "USD");
+        tipoPago()
     }
-    else if (destino === cancun.destino) {
+    else if (destino === brasil.destino) {
         var personas = prompt("Cuantas personas van:");
-        alert("El precio total del viaje es " + "$" + cancun.costo * personas + "USD");
+        alert("El precio total del viaje es " + "$" + brasil.costo * personas + "USD");
+        tipoPago() 
     }
     else if (destino === puntaC.destino) {
         var personas = prompt("Cuantas personas van:");
         alert("El precio total del viaje es " + "$" + puntaC.costo * personas + "USD");
+        tipoPago() 
+    }
+    else if (destino === colombia.destino) {
+        var personas = prompt("Cuantas personas van:");
+        alert("El precio total del viaje es " + "$" + colombia.costo * personas + "USD");
+        tipoPago() 
+    }
+    else if (destino === margarita.destino) {
+        var personas = prompt("Cuantas personas van:");
+        alert("El precio total del viaje es " + "$" + margarita.costo * personas + "USD");
+        tipoPago() 
+    }
+    else if (destino === losRoques.destino) {
+        var personas = prompt("Cuantas personas van:");
+        alert("El precio total del viaje es " + "$" + losRoques.costo * personas + "USD");
+        tipoPago() 
     }
     else {
         alert("PUEDE QUE AUN NO TENGAMOS VIAJES DISPONIBLES A ESE DESTINO!")
@@ -37,8 +58,25 @@ function paquete(destino, costo) {
     this.costo = costo;
 }
 
+function tipoPago() {
+    var tarjeta = prompt("Tipo de tarjeta a usar?: 1) Debito | 2) Credito");
 
-function consultar() {
+    if (tarjeta == 1) {
+        var listo = alert("Todo listo?");
+        var procesado = alert("PAGO PROCESADO");
+    }
+    else if(tarjeta == 2){
+        var tipoTarjeta = prompt("Elige una opcion: 1)Visa | 2)MasterCard | 3)AmericanExpress ");
+        var cuotas = prompt("Cantidad de cuotas sin interes? (Hasta 3 maximo)");
+        var procesando = alert(`PROCESANDO PAGO TOTAL EN ${cuotas} cuotas`);
+        var procesado = alert("PAGO PROCESADO");
+    }
+}
+
+
+
+
+/* function consultar() {
 
     var paises = ["Argentina", "Brasil", "Colombia", "Mexico", "Republica Dominicana", "Francia", "Alemania", "Inglaterra", "Taiwan", "Tailandia", "Japon"];
     var latinoAmetica = paises.slice(0, 5);
@@ -68,6 +106,6 @@ function consultar() {
 };
 
 
-//destinos//
+//destinos// */
 
 
