@@ -1,8 +1,10 @@
 
+
+body{
+    background-color: #161B2E;
+}
+
 #botonComprar{
     text-align: center;
 }
 
-#botonConsultar{
-    text-align: center;
-}
