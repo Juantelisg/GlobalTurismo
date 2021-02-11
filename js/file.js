@@ -1,6 +1,18 @@
-document.getElementById("calcular").onclick= comprar;
+document.getElementById("comprar").onclick= comprar;
 document.getElementById("calcularCompra").onclick= calcular;
 document.getElementById("evento").onclick= evento;
+
+function pais(destino, costo) {
+    this.destino = destino;
+    this.costo = costo;
+};
+
+var alemania = new pais("berlin",  900);
+var brasil = new pais("rio de janeiro",  900);
+var puntaC = new pais("punta cana",  900);
+var colombia = new pais("bogota",  900);
+var margarita = new pais("margarita",  900);
+var losRoques = new pais("los roques",  900);
 
 function calcular() {
     
@@ -41,12 +53,6 @@ function calcular() {
     
 }
 
-
-function paquete(destino, costo) {
-    this.destino = destino;
-    this.costo = costo;
-}
-
 function evento(event) {
 
     if (event.keyCode == 13) {
@@ -57,20 +63,20 @@ function evento(event) {
     }
 }
 
-function tipoPago() {
-    var tarjeta = prompt("Tipo de tarjeta a usar?: 1) Debito | 2) Credito");
 
-    if (tarjeta == 1) {
-        var listo = alert("Todo listo?");
-        var procesado = alert("PAGO PROCESADO");
-    }
-    else if(tarjeta == 2){
-        var tipoTarjeta = prompt("Elige una opcion: 1)Visa | 2)MasterCard | 3)AmericanExpress ");
-        var cuotas = prompt("Cantidad de cuotas sin interes? (Hasta 3 maximo)");
-        var procesando = alert(`PROCESANDO PAGO TOTAL EN ${cuotas} cuotas`);
-        var procesado = alert("PAGO PROCESADO");
-    }
+
+function comprar() {
+
+
+    var nombre = document.getElementById("fname").value;
+    var apellido = document.getElementById("lname").value;
+    var destino = document.getElementById("destino").value;
+    var contenido = document.createTextNode(`Titular: ${nombre}, ${apellido} | Destino: ${destino} | El pago ha sido procesado. ¡Disfruta tu viaje!`);
+    document.getElementById("alert alert-success").appendChild(contenido);
+    
+    
 }
+
 
 
 

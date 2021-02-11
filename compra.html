@@ -38,7 +38,6 @@
                 <ul class="nav navbar-nav">
                 <li><a href="inicio.html">Inicio</a></li>
                 <li class="active"><a href="compra.html">Compra</a></li>
-                <li><a href="destinos.html">Destinos</a></li>
                 <li><a href="#">Contacto</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -48,9 +47,31 @@
         </div>
     </nav>
 
+  <div class="container-fluid bg-3 text-center" style="color: whitesmoke;">    
+    <h3>Compras y destinos</h3><br>
+    <div class="row">
+      <div class="col-sm-3">
+        <p>Margarita, Venezuela</p>
+        <img src="multimedia/margarita.jpg" class="img-responsive" style="width:100%" alt="Image">
+      </div>
+    <div class="col-sm-3"> 
+      <p>Punta Cana, Republica Dominicana</p>
+      <img src="multimedia/punta_cana.jpg" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3"> 
+      <p>New York, USA</p>
+      <img src="multimedia/new_york2.jpg" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-3">
+      <p>Paris, Francia</p>
+      <img src="multimedia/paris2.jpg" class="img-responsive" style="width:100%" alt="Image">
+    </div>
+    </div>
+  </div><br>
+
     <div class="container">
-        <h2 style="color: whitesmoke;">¿Que lugar del mundo te gustaria conocer?</h2>
-        <h4 style="color: white;">Primero debes buscar aca tu destino</h4>
+        <h2 style="color: #222222;">¿Que lugar del mundo te gustaria conocer?</h2>
+        <h4 style="color: #222222;">Primero debes buscar aca tu destino</h4>
         <p></p>  
         <input class="form-control" id="myInput" type="text" placeholder="Search..">
         <br>
@@ -91,7 +112,10 @@
             <tr style="background-color: #f1f1f1c5;">
                 <td>Republica Dominicana</td>
                 <td>Punta Cana</td>
-                <td>USD: $600</td>
+                <td>
+                USD: $600
+          
+                </td>
             </tr>
           </tbody>
         </table>
@@ -106,9 +130,9 @@
             });
           });
         });
-    </script>
+      </script>
 
-<div class="container" style="color: whitesmoke;">
+<!-- div class="container" style="color: whitesmoke;">
     <fieldset class="formulario-contacto">
         <legend>Realiza tu compra</legend>
         <div style="display: flex; justify-content: space-between;">               
@@ -135,15 +159,45 @@
             </form>
         </div> 
     <div style="display: flex; justify-content: space-between;">    
-        
+      
+      <button type="button" class="btn btn-success">Comprar</button>
+      <button type="button" class="btn btn-info" onclick="calcular()" id="calcularCompra">Calcular precio</button>
+      
+    </div> 
+       
+    </fieldset -->
+  </div> 
     
-        
-        <button type="submit" class="btn btn-default" onclick="calcular()" id="calcularCompra">Calcular precio</button>
-        
-        <input type="text" class="form-control" placeholder="Capturemos un evento" id="evento" onkeypress="evento(event)">
-    </fieldset>
-    
-</div>   
+<div class="container">
+  <form action="action_page.php">
+    <legend>Realiza tu compra</legend>
+    <label for="fname">Nombre</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Apellido</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Destino</label>
+    <select id="destino" name="country"> 
+        <option>berlin</option>
+        <option>rio de janeiro</option>
+        <option>bogota</option>
+        <option>margarita</option>
+        <option>los roques</option>
+        <option>punta cana</option>
+    </select>
+
+      <label>Cantidad de personas</label><br>
+      <input type="number" class="form-control" name="nombre" placeholder="Cantidad de personas" id="cantidadPersonas">
+      <div id="alert alert-success" class="alert alert-success"></div>
+
+    <button type="button" class="btn btn-success" onclick="comprar()" id="comprar">Comprar</button>
+    <button type="button" class="btn btn-info" onclick="calcular()" id="calcularCompra">Calcular precio</button>
+
+  </form>
+</div>
+
+
 
 
   
