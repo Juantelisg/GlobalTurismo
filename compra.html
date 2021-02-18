@@ -9,6 +9,26 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+ 
+      $(document).ready(function()
+      {
+        $("p").css({
+          'font-size':'medium',
+        });
+
+        $(":button").hover(function(){
+           $(this).width(120);
+        });
+
+
+      });
+   
+    </script>
+
+
+
+
     <style>
     
     .navbar {
@@ -69,7 +89,7 @@
     </div>
   </div><br>
 
-    <div class="container">
+  <div class="container">
         <h2 style="color: #222222;">¿Que lugar del mundo te gustaria conocer?</h2>
         <h4 style="color: #222222;">Primero debes buscar aca tu destino</h4>
         <p></p>  
@@ -130,42 +150,8 @@
             });
           });
         });
-      </script>
+    </script>
 
-<!-- div class="container" style="color: whitesmoke;">
-    <fieldset class="formulario-contacto">
-        <legend>Realiza tu compra</legend>
-        <div style="display: flex; justify-content: space-between;">               
-            <form>
-                <div class="form-group">
-                    <label for="nombre">Nombre y Apellido:</label><br>
-                    <input type="text" class="form-control" name="nombre" placeholder="Escribe tu nombre" id="nombre">
-                </div>
-                <div class="form-group">
-                    <label for="sel1">Destino</label>
-                    <select class="form-control" id="destino" >
-                      <option>berlin</option>
-                      <option>rio de janeiro</option>
-                      <option>bogota</option>
-                      <option>margarita</option>
-                      <option>los roques</option>
-                      <option>punta cana</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Cantidad de personas</label><br>
-                    <input type="number" class="form-control" name="nombre" placeholder="Cantidad de personas" id="cantidadPersonas">
-                </div>
-            </form>
-        </div> 
-    <div style="display: flex; justify-content: space-between;">    
-      
-      <button type="button" class="btn btn-success">Comprar</button>
-      <button type="button" class="btn btn-info" onclick="calcular()" id="calcularCompra">Calcular precio</button>
-      
-    </div> 
-       
-    </fieldset -->
   </div> 
     
 <div class="container">
@@ -197,7 +183,8 @@
   </form>
 </div>
 
-
+<script src="jquery.js"></script>
+  
 
 
   
