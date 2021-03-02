@@ -11,18 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
  
-      $(document).ready(function()
-      {
-        $("p").css({
-          'font-size':'medium',
-        });
-
-        $(":button").hover(function(){
-           $(this).width(120);
-        });
-
-
-      });
+     
    
     </script>
 
@@ -91,7 +80,7 @@
 
   <div class="container">
         <h2 style="color: #222222;">¿Que lugar del mundo te gustaria conocer?</h2>
-        <h4 style="color: #222222;">Primero debes buscar aca tu destino</h4>
+        <h4 style="color: #222222;">1. Primero debes buscar aca tu destino</h4>
         <p></p>  
         <input class="form-control" id="myInput" type="text" placeholder="Search..">
         <br>
@@ -139,7 +128,7 @@
             </tr>
           </tbody>
         </table>
-    </div>
+  </div>
 
     <script>
         $(document).ready(function(){
@@ -156,7 +145,7 @@
     
 <div class="container">
   <form action="action_page.php">
-    <legend>Realiza tu compra</legend>
+    <legend>2. Realiza tu compra</legend>
     <label for="fname">Nombre</label>
     <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
@@ -179,14 +168,29 @@
 
     <button type="button" class="btn btn-success" onclick="comprar()" id="comprar">Comprar</button>
     <button type="button" class="btn btn-info" onclick="calcular()" id="calcularCompra">Calcular precio</button>
+    <button type="button" class="btn btn-success" onclick="comprar()" id="comprarprueba">prueba</button>
 
   </form>
 </div>
 
-<script src="jquery.js"></script>
+<script>
+  document.getElementById("comprarprueba").addEventListener("click", ajax);
+  function ajax() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if(this.readyState==4 && this.status==200){
+        document.getElementById("alert alert-success").innerHTML = this.responseText;
+      }
+    };
+     
+    xhr.open("GET", "ajax.txt", true);
+    xhr.send();
+  }
   
+</script>
 
 
+<script src="jquery.js"></script>
   
 <script src="js/file.js"></script>
 </body>

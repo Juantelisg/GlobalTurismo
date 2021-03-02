@@ -83,3 +83,15 @@ function comprar() {
 
 
 
+$(document).ready(function()
+{
+  $("p").css({
+    'font-size':'medium',
+  });
+
+  $(":button").hover(function(){
+     $(this).width(120);
+  });
+
+
+});
