@@ -1,7 +1,4 @@
-document.getElementById("pagar").onclick= pagar;
-document.getElementById("consultarMonto").onclick= consultar;
-document.getElementById("pay-PuntaCana").onclick= payPuntaCana;
-document.getElementById("pay-Margarita").onclick= payMargarita;
+document.getElementById("tipoTarjeta").onclick= tipoTarjeta;
 
 function pais(destino, costo) {
     this.destino = destino;
@@ -15,65 +12,94 @@ var colombia = new pais("bogota",  900);
 var margarita = new pais("margarita",  900);
 var losRoques = new pais("los roques",  900);
 
-function consultar() {
-    
-    var alemania = {destino: "Berlin", costo: 900};
-    var brasil = {destino: "Rio de janeiro", costo: 500};
-    var puntaC = {destino: "Punta cana", costo: 600};
-    var colombia = {destino: "Bogota", costo: 400};
-    var margarita = {destino: "Margarita", costo: 600};
-    var losRoques = {destino: "Los roques", costo: 1000};
 
-    var destino = document.getElementById("destino").value;
-    var cantidadP = document.getElementById("pasajeros").value;
+function tipoTarjetaPuntaCana() {
+    var tarjeta = document.getElementById("tipoTarjeta-PuntaC").value
+    document.getElementById("formapago-PuntaC").innerHTML = "Forma de pago: " + tarjeta
+}
 
-    if (destino === alemania.destino) {
-        alert(`El precio total del viaje es $ ${alemania.costo * cantidadP} USD`);
-    }
-    else if (destino === brasil.destino) {
-        alert(`El precio total del viaje es $ ${brasil.costo * cantidadP} USD`); 
-    }
-    else if (destino === puntaC.destino) {
-        alert(`El precio total del viaje es $ ${puntaC.costo * cantidadP} USD`); 
-    }
-    else if (destino === colombia.destino) {
-        alert(`El precio total del viaje es $ ${colombia.costo * cantidadP} USD`); 
-    }
-    else if (destino === margarita.destino) {
-        alert(`El precio total del viaje es $ ${margarita.costo * cantidadP} USD`); 
-    }
-    else if (destino === losRoques.destino) {
-        alert(`El precio total del viaje es $ ${losRoques.costo * cantidadP} USD`); 
-    }
-    else {
-        alert("PUEDE QUE AUN NO TENGAMOS VIAJES DISPONIBLES A ESE DESTINO!")
-    };
+function tipoTarjetaMargarita() {
+    var tarjeta = document.getElementById("tipoTarjeta-Margarita").value
+    document.getElementById("formapago-Margarita").innerHTML = "Forma de pago: " + tarjeta
+}
 
-    
+function tipoTarjetaParis() {
+    var tarjeta = document.getElementById("tipoTarjeta-Paris").value
+    document.getElementById("formapago-Paris").innerHTML = "Forma de pago: " + tarjeta
+}
+
+function tipoTarjetaNewYork() {
+    var tarjeta = document.getElementById("tipoTarjeta-NewYork").value
+    document.getElementById("formapago-NewYork").innerHTML = "Forma de pago: " + tarjeta
+}
+
+function tipoTarjetaSanFrancisco() {
+    var tarjeta = document.getElementById("tipoTarjeta-SanFrancisco").value
+    document.getElementById("formapago-SanFrancisco").innerHTML = "Forma de pago: " + tarjeta
+}
+
+function tipoTarjetaBerlin() {
+    var tarjeta = document.getElementById("tipoTarjeta-Berlin").value
+    document.getElementById("formapago-Berlin").innerHTML = "Forma de pago: " + tarjeta
 }
 
 
-function pagar() {
+function totalPuntaCana() {
+    var precioBase = 600;
+    var pasajeros = document.getElementById("pasajerosPuntaC").value
+    var total = precioBase * pasajeros
+    
+    document.getElementById("total-PuntaC").innerHTML = "Total: " + "$" + total
 
-    var nombre = document.getElementById("fname").value;
-    var apellido = document.getElementById("lname").value;
-    var destino = document.getElementById("destino").value;
-    var contenido = document.createTextNode(`Titular: ${nombre}, ${apellido} | Destino: ${destino} | El pago ha sido procesado. ¡Disfruta tu viaje!`);
-    document.getElementById("alert alert-success").appendChild(contenido);
-    
-    
 }
-
-
 
 function totalMargarita() {
     
     var precioBase = 600;
-    var pasajeros = document.getElementById("pasajeros").value
+    var pasajeros = document.getElementById("pasajerosMargarita").value
     var total = precioBase * pasajeros
 
-    document.getElementById("totalito").innerHTML = total
 
+
+    document.getElementById("total-Marg").innerHTML = "Total: " + "$" + total
+
+}
+
+function totalParis() {
     
+    var precioBase = 900;
+    var pasajeros = document.getElementById("pasajerosParis").value
+    var total = precioBase * pasajeros
+
+
+
+    document.getElementById("total-Paris").innerHTML = "Total: " + "$" + total
+
+}
+
+function totalNewYork() {
+    var precioBase = 1000;
+    var pasajeros = document.getElementById("pasajerosNewYork").value
+    var total = precioBase * pasajeros
+    
+    document.getElementById("total-NewYork").innerHTML = "Total: " + "$" + total
+
+}
+
+function totalSanFrancisco() {
+    var precioBase = 800;
+    var pasajeros = document.getElementById("pasajerosSanFrancisco").value
+    var total = precioBase * pasajeros
+    
+    document.getElementById("total-SanFrancisco").innerHTML = "Total: " + "$" + total
+
+}
+
+function totalBerlin() {
+    var precioBase = 900;
+    var pasajeros = document.getElementById("pasajerosBerlin").value
+    var total = precioBase * pasajeros
+    
+    document.getElementById("total-Berlin").innerHTML = "Total: " + "$" + total
 
 }
