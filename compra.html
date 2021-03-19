@@ -73,7 +73,7 @@
             <p><b>Punta Cana</b></p>
             <p class="w3-opacity">Fri 27 Nov 2016</p>
             <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal-PuntaCana').style.display='block'">Buy Tickets</button>
           </div>
         </div>
         <div class="w3-third w3-margin-bottom">
@@ -82,7 +82,7 @@
             <p><b>Margarita</b></p>
             <p class="w3-opacity">Sat 28 Nov 2016</p>
             <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal-Margarita').style.display='block'">Buy Tickets</button>
           </div>
         </div>
         <div class="w3-third w3-margin-bottom">
@@ -91,7 +91,7 @@
             <p><b>Paris</b></p>
             <p class="w3-opacity">Sun 29 Nov 2016</p>
             <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal-Paris').style.display='block'">Buy Tickets</button>
           </div>
         </div>
         <div class="w3-third w3-margin-bottom">
@@ -100,7 +100,7 @@
             <p><b>Nueva York</b></p>
             <p class="w3-opacity">Sun 29 Nov 2016</p>
             <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal-NewYork').style.display='block'">Buy Tickets</button>
           </div>
         </div>
         <div class="w3-third w3-margin-bottom">
@@ -109,7 +109,7 @@
             <p><b>San Francisco</b></p>
             <p class="w3-opacity">Sun 29 Nov 2016</p>
             <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal-SanFrancisco').style.display='block'">Buy Tickets</button>
           </div>
         </div>
         <div class="w3-third w3-margin-bottom">
@@ -118,20 +118,88 @@
             <p><b>Berlin</b></p>
             <p class="w3-opacity">Sun 29 Nov 2016</p>
             <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
+            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal-Berlin').style.display='block'">Buy Tickets</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Ticket Modal -->
-  <div id="ticketModal" class="w3-modal">
+  <!-- Ticket Modal Punta Cana-->
+  <div id="ticketModal-PuntaCana" class="w3-modal">
     <div class="w3-modal-content w3-animate-top w3-card-4">
       <header class="w3-container w3-teal w3-center w3-padding-32"> 
-        <span onclick="document.getElementById('ticketModal').style.display='none'" 
+        <span onclick="document.getElementById('ticketModal-PuntaCana').style.display='none'" 
        class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
         <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
+        <h2>Destino: Punta Cana</h2>
+      </header>
+      <div class="w3-container">
+        <p><label><i class="fa fa-user"></i> Datos</label></p>
+          
+        <div style="display: flex; justify-content: ;">
+          <input class="w3-input w3-border" type="text" placeholder="Nombre y Apellido">
+          <input class="w3-input w3-border" type="text" placeholder="Email">
+        </div>
+        
+        <p><label><i class="fa fa-shopping-cart"></i> Tu compra</label></p>
+        <div style="display: flex;">
+          <input class="w3-input w3-border" type="number" placeholder="Pasajeros">
+          <select id="destino" name="country"> 
+            <option>berlin</option>
+            <option>rio de janeiro</option>
+            <option>bogota</option>
+            <option>margarita</option>
+            <option>los roques</option>
+            <option>punta cana</option>
+          </select>
+        </div>
+
+        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right" id="pay-PuntaCana" onclick="payPuntaCana()">PAY <i class="fa fa-check"></i></button>
+        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal-PuntaCana').style.display='none'">Close <i class="fa fa-remove"></i></button>
+        <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticket Modal Margarita -->
+  <div id="ticketModal-Margarita" class="w3-modal" onmouseover="totalMargarita()">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-teal w3-center w3-padding-32"> 
+        <span onclick="document.getElementById('ticketModal-Margarita').style.display='none'" 
+       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
+        <h2>Destino: Margarita</h2>
+      </header>
+      <div class="w3-container">
+        <p><label><i class="fa fa-user"></i> Datos</label></p>
+          
+        <div style="display: flex; justify-content: ;">
+          <input class="w3-input w3-border" type="text" placeholder="Nombre y Apellido">
+          <input class="w3-input w3-border" type="text" placeholder="Email">
+        </div>
+        
+        <p><label><i class="fa fa-shopping-cart"></i> Tu compra</label></p>
+        <div style="display: flex;">
+          <input class="w3-input w3-border" type="number" placeholder="Pasajeros" id="pasajeros">
+          <div id="totalmarga">$<h3 id="totalito">600</h3></div>
+        </div>
+
+        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right" id="pay-Margarita" onclick="payMargarita()">PAY <i class="fa fa-check"></i></button>
+        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal-Margarita').style.display='none'">Close <i class="fa fa-remove"></i></button>
+        <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticket Modal Paris-->
+  <div id="ticketModal-Paris" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-teal w3-center w3-padding-32"> 
+        <span onclick="document.getElementById('ticketModal-Paris').style.display='none'" 
+       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
+        <h2>Destino: Paris</h2>
       </header>
       <div class="w3-container">
         <p><label><i class="fa fa-user"></i> Datos</label></p>
@@ -155,27 +223,124 @@
         </div>
 
         <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
-        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
+        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal-Paris').style.display='none'">Close <i class="fa fa-remove"></i></button>
         <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
       </div>
     </div>
   </div>
 
-<script>
-  document.getElementById("comprarprueba").addEventListener("click", ajax);
-  function ajax() {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-      if(this.readyState==4 && this.status==200){
-        document.getElementById("alert alert-success").innerHTML = this.responseText;
-      }
-    };
-     
-    xhr.open("GET", "ajax.txt", true);
-    xhr.send();
-  }
-  
-</script>
+  <!-- Ticket Modal New York-->
+  <div id="ticketModal-NewYork" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-teal w3-center w3-padding-32"> 
+        <span onclick="document.getElementById('ticketModal-NewYork').style.display='none'" 
+       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
+        <h2>Destino: New York</h2>
+      </header>
+      <div class="w3-container">
+        <p><label><i class="fa fa-user"></i> Datos</label></p>
+          
+        <div style="display: flex; justify-content: ;">
+          <input class="w3-input w3-border" type="text" placeholder="Nombre y Apellido">
+          <input class="w3-input w3-border" type="text" placeholder="Email">
+        </div>
+        
+        <p><label><i class="fa fa-shopping-cart"></i> Tu compra</label></p>
+        <div style="display: flex;">
+          <input class="w3-input w3-border" type="number" placeholder="Pasajeros">
+          <select id="destino" name="country"> 
+            <option>berlin</option>
+            <option>rio de janeiro</option>
+            <option>bogota</option>
+            <option>margarita</option>
+            <option>los roques</option>
+            <option>punta cana</option>
+          </select>
+        </div>
+
+        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
+        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal-NewYork').style.display='none'">Close <i class="fa fa-remove"></i></button>
+        <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticket Modal San Francisco-->
+  <div id="ticketModal-SanFrancisco" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-teal w3-center w3-padding-32"> 
+        <span onclick="document.getElementById('ticketModal-SanFrancisco').style.display='none'" 
+       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
+        <h2>Destino: San Francisco</h2>
+      </header>
+      <div class="w3-container">
+        <p><label><i class="fa fa-user"></i> Datos</label></p>
+          
+        <div style="display: flex; justify-content: ;">
+          <input class="w3-input w3-border" type="text" placeholder="Nombre y Apellido">
+          <input class="w3-input w3-border" type="text" placeholder="Email">
+        </div>
+        
+        <p><label><i class="fa fa-shopping-cart"></i> Tu compra</label></p>
+        <div style="display: flex;">
+          <input class="w3-input w3-border" type="number" placeholder="Pasajeros">
+          <select id="destino" name="country"> 
+            <option>berlin</option>
+            <option>rio de janeiro</option>
+            <option>bogota</option>
+            <option>margarita</option>
+            <option>los roques</option>
+            <option>punta cana</option>
+          </select>
+        </div>
+
+        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
+        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal-SanFrancisco').style.display='none'">Close <i class="fa fa-remove"></i></button>
+        <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticket Modal Berlin-->
+  <div id="ticketModal-Berlin" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-teal w3-center w3-padding-32"> 
+        <span onclick="document.getElementById('ticketModal-Berlin').style.display='none'" 
+       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
+        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
+        <h2>Destino: Berlin</h2>
+      </header>
+      <div class="w3-container">
+        <p><label><i class="fa fa-user"></i> Datos</label></p>
+          
+        <div style="display: flex; justify-content: ;">
+          <input class="w3-input w3-border" type="text" placeholder="Nombre y Apellido">
+          <input class="w3-input w3-border" type="text" placeholder="Email">
+        </div>
+        
+        <p><label><i class="fa fa-shopping-cart"></i> Tu compra</label></p>
+        <div style="display: flex;">
+          <input class="w3-input w3-border" type="number" placeholder="Pasajeros">
+          <select id="destino" name="country"> 
+            <option>berlin</option>
+            <option>rio de janeiro</option>
+            <option>bogota</option>
+            <option>margarita</option>
+            <option>los roques</option>
+            <option>punta cana</option>
+          </select>
+        </div>
+
+        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
+        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal-Berlin').style.display='none'">Close <i class="fa fa-remove"></i></button>
+        <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
+      </div>
+    </div>
+  </div>
+
+
 
 <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
   <i class="fa fa-facebook-official w3-hover-opacity"></i>
@@ -187,8 +352,6 @@
   <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 
-
-<script src="jquery.js"></script>
   
 <script src="js/file.js"></script>
 </body>

@@ -1,32 +1,31 @@
-document.getElementById("comprar").onclick= comprar;
-document.getElementById("calcularCompra").onclick= calcular;
-document.getElementById("evento").onclick= evento;
+document.getElementById("pagar").onclick= pagar;
+document.getElementById("consultarMonto").onclick= consultar;
+document.getElementById("pay-PuntaCana").onclick= payPuntaCana;
+document.getElementById("pay-Margarita").onclick= payMargarita;
 
 function pais(destino, costo) {
     this.destino = destino;
     this.costo = costo;
 };
 
-var alemania = new pais("berlin",  900);
+var alemania = new pais("Berlin",  900);
 var brasil = new pais("rio de janeiro",  900);
 var puntaC = new pais("punta cana",  900);
 var colombia = new pais("bogota",  900);
 var margarita = new pais("margarita",  900);
 var losRoques = new pais("los roques",  900);
 
-function calcular() {
+function consultar() {
     
-    var alemania = {destino: "berlin", costo: 900};
-    var brasil = {destino: "rio de janeiro", costo: 500};
-    var puntaC = {destino: "punta cana", costo: 600};
-    var colombia = {destino: "bogota", costo: 400};
-    var margarita = {destino: "margarita", costo: 600};
-    var losRoques = {destino: "los roques", costo: 1000};
-    
+    var alemania = {destino: "Berlin", costo: 900};
+    var brasil = {destino: "Rio de janeiro", costo: 500};
+    var puntaC = {destino: "Punta cana", costo: 600};
+    var colombia = {destino: "Bogota", costo: 400};
+    var margarita = {destino: "Margarita", costo: 600};
+    var losRoques = {destino: "Los roques", costo: 1000};
+
     var destino = document.getElementById("destino").value;
-    var cantidadP = document.getElementById("cantidadPersonas").value;
-    
-   
+    var cantidadP = document.getElementById("pasajeros").value;
 
     if (destino === alemania.destino) {
         alert(`El precio total del viaje es $ ${alemania.costo * cantidadP} USD`);
@@ -53,20 +52,8 @@ function calcular() {
     
 }
 
-function evento(event) {
 
-    if (event.keyCode == 13) {
-        alert("Has presionado el ENTER")
-    }
-    else{
-        alert('Has presionado una letra dentro de este campo');
-    }
-}
-
-
-
-function comprar() {
-
+function pagar() {
 
     var nombre = document.getElementById("fname").value;
     var apellido = document.getElementById("lname").value;
@@ -79,19 +66,14 @@ function comprar() {
 
 
 
+function totalMargarita() {
+    
+    var precioBase = 600;
+    var pasajeros = document.getElementById("pasajeros").value
+    var total = precioBase * pasajeros
 
+    document.getElementById("totalito").innerHTML = total
 
+    
 
-
-$(document).ready(function()
-{
-  $("p").css({
-    'font-size':'medium',
-  });
-
-  $(":button").hover(function(){
-     $(this).width(120);
-  });
-
-
-});
+}

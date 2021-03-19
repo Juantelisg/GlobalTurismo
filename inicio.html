@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>W3.CSS Template</title>
+<title>GlobalTurismo</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -83,22 +83,24 @@ body {font-family: "Lato", sans-serif}
           <td>USD: $400</td>
         </tr>
         <tr style="background-color: #f1f1f1c5;">
+          <td>Francia</td>
+          <td>Paris</td>
+          <td>USD: $900</td>
+        </tr>
+        <tr>
+          <td>Republica Dominicana</td>
+          <td>Punta Cana</td>
+          <td>USD: $600</td>
+        </tr>
+        <tr style="background-color: #f1f1f1c5;">
           <td>Venezuela</td>
           <td>Margarita</td>
           <td>USD: $600</td>
         </tr>
         <tr>
-            <td>Venezuela</td>
-            <td>Los Roques</td>
-            <td>USD: $1000</td>
-        </tr>
-        <tr style="background-color: #f1f1f1c5;">
-            <td>Republica Dominicana</td>
-            <td>Punta Cana</td>
-            <td>
-            USD: $600
-      
-            </td>
+          <td>Venezuela</td>
+          <td>Los Roques</td>
+          <td>USD: $1000</td>
         </tr>
       </tbody>
     </table>
@@ -117,7 +119,7 @@ body {font-family: "Lato", sans-serif}
     });
 </script>
 
-  <!-- Ticket Modal -->
+  <!-- Ticket Modal 
   <div id="ticketModal" class="w3-modal">
     <div class="w3-modal-content w3-animate-top w3-card-4">
       <header class="w3-container w3-teal w3-center w3-padding-32"> 
@@ -135,7 +137,7 @@ body {font-family: "Lato", sans-serif}
         <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
       </div>
     </div>
-  </div>
+  </div> -->
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
@@ -149,21 +151,7 @@ body {font-family: "Lato", sans-serif}
 </footer>
 
 <script>
-// Automatic Slideshow - change image every 4 seconds
-var myIndex = 0;
-carousel();
 
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 4000);    
-}
 
 // Used to toggle the menu on small screens when clicking on the menu button
 function myFunction() {
@@ -183,6 +171,7 @@ window.onclick = function(event) {
   }
 }
 </script>
+
 
 <script src="js/file.js"></script>
 </body>
