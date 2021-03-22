@@ -126,7 +126,7 @@
   </div>
 
   <!-- Ticket Modal Punta Cana-->
-  <div id="ticketModal-PuntaCana" class="w3-modal" onmouseover="totalPuntaCana()">
+  <div id="ticketModal-PuntaCana" class="w3-modal" onmouseover="totalPuntaCana()" id="app">
     <div class="w3-modal-content w3-animate-top w3-card-4">
       <header class="w3-container w3-teal w3-center w3-padding-32"> 
         <span onclick="document.getElementById('ticketModal-PuntaCana').style.display='none'" 
@@ -138,8 +138,8 @@
         <p><label><i class="fa fa-user"></i> Datos</label></p>
           
         <div style="display: flex;">
-          <input class="w3-input w3-border" type="text" placeholder="Nombre y Apellido">
-          <input class="w3-input w3-border" type="text" placeholder="Email">
+          <input class="w3-input w3-border" type="text" placeholder="Nombre y Apellido" v-model="to_name">
+          <input class="w3-input w3-border" type="text" placeholder="Email" v-model="to_email">
         </div>
         
         <p><label><i class="fa fa-shopping-cart"></i> Tu compra</label></p>
@@ -150,10 +150,10 @@
             
             <div>
               <label for="cantidadPasajeos">Cantidad de pasajeros</label>
-              <input class="w3-input w3-border" type="number" name="cantidadPasajeos" placeholder="Pasajeros" id="pasajerosPuntaC">
+              <input class="w3-input w3-border" type="number" name="cantidadPasajeos" placeholder="Pasajeros" id="pasajerosPuntaC" v-model="cantidad_pasajeros">
               <br>
               <br>
-              <select name="tipotarjeta" id="tipoTarjeta-PuntaC" onclick="tipoTarjetaPuntaCana()">
+              <select name="tipotarjeta" id="tipoTarjeta-PuntaC" onclick="tipoTarjetaPuntaCana()" v-model="tipo_tarjeta">
                 <option value="tipo">-Tipo de pago-</option>
                 <option value="Efectivo">Efectivo</option>
                 <option value="Mastercard">Mastercard</option>
@@ -164,7 +164,7 @@
             
               <div id="totalmarga" style="padding: 10px;">
                 <h3>Detalle de tu compra:</h3>
-                <p style="font-weight: bold;">Destino: Margarita</p>
+                <p style="font-weight: bold;">Destino: Punta Cana</p>
                 <p id="formapago-PuntaC" style="font-weight: bold;"></p>
                 <p style="border-bottom: 1px solid;">Salida: Buenos Aires(EZE)</p>
                 <h3 id="total-PuntaC"></h3>
@@ -174,8 +174,8 @@
 
         
 
-          <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right" id="pay" onclick="payMargarita()">PAY <i class="fa fa-check"></i></button>
-          <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal-Margarita').style.display='none'">Close <i class="fa fa-remove"></i></button>
+          <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right btn btn-success" id="pay" type="submit"  @click="pagar">PAY <i class="fa fa-check"></i></button>
+          <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal-PuntaCana').style.display='none'">Close <i class="fa fa-remove"></i></button>
           <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
       </div>
     </div>
@@ -231,7 +231,7 @@
 
         
 
-        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right" id="pay" onclick="payMargarita()">PAY <i class="fa fa-check"></i></button>
+        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right" id="pay" >PAY <i class="fa fa-check"></i></button>
         <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal-Margarita').style.display='none'">Close <i class="fa fa-remove"></i></button>
         <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
       </div>
@@ -277,7 +277,7 @@
             
               <div id="totalmarga" style="padding: 10px;">
                 <h3>Detalle de tu compra:</h3>
-                <p style="font-weight: bold;">Destino: Margarita</p>
+                <p style="font-weight: bold;">Destino: Paris</p>
                 <p id="formapago-Paris" style="font-weight: bold;"></p>
                 <p style="border-bottom: 1px solid;">Salida: Buenos Aires(EZE)</p>
                 <h3 id="total-Paris"></h3>
@@ -288,7 +288,7 @@
         
 
           <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right" id="pay">PAY <i class="fa fa-check"></i></button>
-          <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal-Margarita').style.display='none'">Close <i class="fa fa-remove"></i></button>
+          <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal-Paris').style.display='none'">Close <i class="fa fa-remove"></i></button>
           <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
       </div>
     </div>
@@ -333,7 +333,7 @@
             
               <div id="totalmarga" style="padding: 10px;">
                 <h3>Detalle de tu compra:</h3>
-                <p style="font-weight: bold;">Destino: Margarita</p>
+                <p style="font-weight: bold;">Destino: New York</p>
                 <p id="formapago-NewYork" style="font-weight: bold;"></p>
                 <p style="border-bottom: 1px solid;">Salida: Buenos Aires(EZE)</p>
                 <h3 id="total-NewYork"></h3>
@@ -344,7 +344,7 @@
         
 
           <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right" id="pay">PAY <i class="fa fa-check"></i></button>
-          <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal-Margarita').style.display='none'">Close <i class="fa fa-remove"></i></button>
+          <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal-NewYork').style.display='none'">Close <i class="fa fa-remove"></i></button>
           <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
       </div>
     </div>
@@ -389,7 +389,7 @@
             
               <div id="totalmarga" style="padding: 10px;">
                 <h3>Detalle de tu compra:</h3>
-                <p style="font-weight: bold;">Destino: Margarita</p>
+                <p style="font-weight: bold;">Destino: San Francisco</p>
                 <p id="formapago-SanFrancisco" style="font-weight: bold;"></p>
                 <p style="border-bottom: 1px solid;">Salida: Buenos Aires(EZE)</p>
                 <h3 id="total-SanFrancisco"></h3>
@@ -400,7 +400,7 @@
         
 
           <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right" id="pay">PAY <i class="fa fa-check"></i></button>
-          <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal-Margarita').style.display='none'">Close <i class="fa fa-remove"></i></button>
+          <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal-SanFrancisco').style.display='none'">Close <i class="fa fa-remove"></i></button>
           <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
       </div>
     </div>
@@ -445,7 +445,7 @@
             
               <div id="totalmarga" style="padding: 10px;">
                 <h3>Detalle de tu compra:</h3>
-                <p style="font-weight: bold;">Destino: Margarita</p>
+                <p style="font-weight: bold;">Destino: Berlin</p>
                 <p id="formapago-Berlin" style="font-weight: bold;"></p>
                 <p style="border-bottom: 1px solid;">Salida: Buenos Aires(EZE)</p>
                 <h3 id="total-Berlin"></h3>
@@ -456,7 +456,7 @@
         
 
           <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right" id="pay">PAY <i class="fa fa-check"></i></button>
-          <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal-Margarita').style.display='none'">Close <i class="fa fa-remove"></i></button>
+          <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal-Berlin').style.display='none'">Close <i class="fa fa-remove"></i></button>
           <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
       </div>
     </div>
@@ -464,15 +464,54 @@
 
 
 
-<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge" id="footer">
   <i class="fa fa-facebook-official w3-hover-opacity"></i>
   <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-snapchat w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
   <i class="fa fa-twitter w3-hover-opacity"></i>
   <i class="fa fa-linkedin w3-hover-opacity"></i>
-  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  <p class="w3-medium"> Made by @Juantelisg </p>
 </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+<script src="https://cdn.emailjs.com/dist/email.min.js" type="text/javascript"></script>
+
+<script>
+  (function(){
+      emailjs.init("user_OSBIVL8aEhLKlz72i6YQm");
+   })();
+  const vue = new Vue({
+      el: '#app',
+      data(){
+          return {
+              to_name: '',
+              to_email: '',
+              cantidad_pasajeros: '',
+              tipo_tarjeta: '',
+          }
+      },
+      methods: {
+          pagar(){
+              let data = {
+                  to_name: this.to_name,
+                  to_email: this.to_email,
+                  cantidad_pasajeros: this.cantidad_pasajeros,
+                  tipo_tarjeta: this.tipo_tarjeta,
+              };
+              emailjs.send("service_gv43xgx","form-compra", data)
+              .then(function(response) {
+                  if(response.text === 'OK'){
+                      alert('El correo se ha enviado de forma exitosa');
+                  }
+                 console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+              }, function(err) {
+                  alert('Ocurrió un problema al enviar el correo');
+                 console.log("FAILED. error=", err);
+              });
+          }
+      }
+  });
+</script>
+
 
   
 <script src="js/file.js"></script>

@@ -1,4 +1,3 @@
-document.getElementById("tipoTarjeta").onclick= tipoTarjeta;
 
 function pais(destino, costo) {
     this.destino = destino;
